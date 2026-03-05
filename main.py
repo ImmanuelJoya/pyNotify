@@ -5,6 +5,12 @@ from email.mime.text import MIMEText
 import time
 from datetime import datetime
 
+from dotenv import load_dotenv
+load_dotenv()
+
+## assigne the password to a variable
+GMAIL_PASSWORD = os.getenv("GmailPW")
+
 
 
 # --- CONFIG ---
@@ -21,8 +27,8 @@ def scrape_jobs():
     response = requests.get(URL, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
     
-    # This selector varies by site—you'll inspect the target page
-    job_elements = soup.find_all('div', class_='job-listing')  # Adjust selector
+    # This selector varies by site that I'll be inspecting the target page
+    job_elements = soup.find_all('div', class_='job-tile-result-container')  # this is the class nale name of the div
     
     jobs = []
     for job in job_elements:
@@ -41,7 +47,7 @@ def send_email(subject, body):
     msg['To'] = EMAIL_TO
     
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-        server.login(EMAIL_FROM, 'your-app-password')  # Use Gmail App Password
+        server.login(EMAIL_FROM, GMAIL_PASSWORD)  # my real gmailpassword
         server.send_message(msg)
 
 def main():
