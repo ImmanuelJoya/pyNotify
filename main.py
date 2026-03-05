@@ -8,11 +8,12 @@ from datetime import datetime
 
 
 # --- CONFIG ---
-URL = "https://company.com/careers"  # what I'm trying to target
-KEYWORDS = ["Junior Developer", "Code Documentation", "Technical Writer"]  # Role patterns
+URL = "https://mhicareers.com/search/?createNewAlert=false&q=&locationsearch=Mississauga&optionsFacetsDD_title=&optionsFacetsDD_facility=MHI%20Canada%20Aerospace%2C%20Inc.&optionsFacetsDD_customfield5=&optionsFacetsDD_brand="  # what I'm trying to target
+KEYWORDS = ["Aerospace structural assembler 1", "Aerospace structural assembler",]  # Role patterns 
 EMAIL_TO = "immanueljoy107@gmail.com"
-EMAIL_FROM = "your-alert-email@gmail.com"  # Gmail works with app passwords
-CHECK_INTERVAL = 3600  # Check every hour (in seconds)
+EMAIL_FROM = "immanueljoy107@gmail.com"  # Gmail works with app passwords
+##check intervel is every 24 hours
+CHECK_INTERVAL = 86400   
 
 def scrape_jobs():
     """Extract job listings from the page"""
