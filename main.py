@@ -53,7 +53,7 @@ def main():
             
             if new_jobs:
                 body = "\n\n".join([f"{j['title']}\n{j['url']}" for j in new_jobs])
-                send_email(f"🎯 {len(new_jobs)} New Job(s) Found", body)
+                send_email(f" {len(new_jobs)} New Job(s) Found", body)
                 print(f"Alert sent for: {[j['title'] for j in new_jobs]}")
                 seen_jobs.update(j['title'] for j in new_jobs)
             else:
