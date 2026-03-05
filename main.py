@@ -5,8 +5,10 @@ from email.mime.text import MIMEText
 import time
 from datetime import datetime
 
+
+
 # --- CONFIG ---
-URL = "https://company.com/careers"  # Target careers page
+URL = "https://company.com/careers"  # what I'm trying to target
 KEYWORDS = ["Junior Developer", "Code Documentation", "Technical Writer"]  # Role patterns
 EMAIL_TO = "immanueljoy107@gmail.com"
 EMAIL_FROM = "your-alert-email@gmail.com"  # Gmail works with app passwords
